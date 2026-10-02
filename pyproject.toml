@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-pdf-digest"
+version = "1.0.0"
+description = "Summarize PDF text with a local Ollama model"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Ronak Soltani"}]
+dependencies = ["pypdf>=4.0", "requests>=2.31", "python-dotenv>=1.0"]
+
+[project.scripts]
+pdf-digest = "pdf_digest.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "reportlab>=4.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
