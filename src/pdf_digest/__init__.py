@@ -1,0 +1,1 @@
+"""Local PDF summarization helpers."""
